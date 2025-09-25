@@ -1,0 +1,16 @@
+README.md
+setup.py
+ai_phishing_detector.egg-info/PKG-INFO
+ai_phishing_detector.egg-info/SOURCES.txt
+ai_phishing_detector.egg-info/dependency_links.txt
+ai_phishing_detector.egg-info/entry_points.txt
+ai_phishing_detector.egg-info/requires.txt
+ai_phishing_detector.egg-info/top_level.txt
+cli_tool/__init__.py
+cli_tool/cli.py
+phishing_detector/__init__.py
+phishing_detector/features.py
+phishing_detector/model.py
+phishing_detector/train_model.py
+phishing_detector/utils.py
+tests/test_model.py

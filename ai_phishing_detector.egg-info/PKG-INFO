@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: ai_phishing_detector
+Version: 1.0.0
+Requires-Dist: scikit-learn
+Requires-Dist: joblib
+Requires-Dist: tldextract
+Dynamic: requires-dist

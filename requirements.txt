@@ -1,0 +1,10 @@
+txt
+
+scikit-learn
+joblib
+tldextract
+pytest
+click
+black
+flake8
+pre-commit
