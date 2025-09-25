@@ -21,6 +21,8 @@
 # pip install scikit-learn joblib tldextract pytest click black flakes8 pre-commit
 ```another package``
 # pip install .
+```Train The Model```
+# python train_model.py
 
 ```After these The Phishing detector is good to go```
 # phishing-detector -h  // It will show the cli interface with help menu
