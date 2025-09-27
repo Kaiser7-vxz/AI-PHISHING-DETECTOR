@@ -21,11 +21,7 @@
 # pip install scikit-learn joblib tldextract pytest click black flakes8 pre-commit
 ```another package``
 # pip install .
-<<<<<<< HEAD
-```Train The Model```
-=======
 ```Train the Model```
->>>>>>> a68b2ef (Update README.md)
 # python train_model.py
 
 ```After these The Phishing detector is good to go```
