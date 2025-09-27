@@ -3,7 +3,7 @@
 ```Installation Procedure```
 
 
-# git clone htttps://github.com/username/AI-PHISHING-DETECTOR.git
+# git clone htttps://github.com/Kaiser7-vxz/AI-PHISHING-DETECTOR.git
 # cd AI-PHISHING-DETECTOR
 
 
