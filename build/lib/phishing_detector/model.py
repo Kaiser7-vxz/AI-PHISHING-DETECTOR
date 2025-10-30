@@ -1,37 +1,45 @@
 import os
-print(f"[DEBUG] model.py loaded from: {__file__}")
 import joblib
 from phishing_detector.features import extract_features
 
 def predict_url(url: str) -> str:
     """
-    Predict if a given URL is a phishing attempt or a legitimate website.
+    Let's find out if a URL is trying to trick us (phishing) or if it's safe to visit.
+
+    Args:
+        url (str): The website address you want to check.
+
+    Returns:
+        str: Either "Phishing" if it's suspicious, or "Legitimate" if it looks safe.
     """
+    # First, let's locate our trusty model that knows how to spot phishing attempts.
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    model_path = os.path.join(base_dir, '..', 'model', 'phishing_model.pkl')
 
-    # 💡 Get current working directory instead of __file__-based logic
-    project_root = os.getcwd()  # or use pathlib.Path.cwd()
-    model_path = os.path.join(project_root, 'model', 'phishing_model.pkl')
-
-    print(f"[DEBUG] Resolved model path: {model_path}")  # Add this for verification
-
-    # Check if model file exists
+    # Check if the model file is actually there.
     if not os.path.exists(model_path):
-        return f"[ERROR] Model file not found at: {model_path}\nPlease ensure the model exists."
+        return f"Oops! I couldn't find the model file at {model_path}. Please double-check that it exists."
 
+    # Now, let's try to load the model. Fingers crossed it’s not corrupted!
     try:
         model = joblib.load(model_path)
     except EOFError:
-        return f"[ERROR] Failed to load model — file is corrupted: {model_path}"
+        return f"Uh-oh, the model file at {model_path} seems to be corrupted. Try re-downloading it."
     except Exception as e:
-        return f"[ERROR] Unexpected error loading model: {str(e)}"
+        return f"Something went wrong while loading the model: {e}"
 
+    # Next, we need to pull out features from the URL so the model knows what to look at.
     try:
         url_features = extract_features(url)
     except Exception as e:
-        return f"[ERROR] Failed to extract features from URL: {str(e)}"
+        return f"Whoops! I couldn't extract features from the URL you gave me: {e}"
 
+    # Finally, let's ask the model if the URL is phishing or safe.
     try:
         prediction = model.predict([url_features])[0]
-        return "Phishing" if prediction == 1 else "Legitimate"
+        if prediction == 1:
+            return "Phishing"
+        else:
+            return "Legitimate"
     except Exception as e:
-        return f"[ERROR] Model failed to make prediction: {str(e)}"
+        return f"Oops, the model couldn't make a prediction: {e}"

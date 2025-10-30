@@ -69,19 +69,14 @@ def extract_features(url: str) -> list:
     # Common phishing-related keywords
     suspicious_keywords = ['login', 'secure', 'account', 'update', 'banking']
 
-    # Feature vector
+    # Feature vector - using the 6 most important features for phishing detection
     features = [
         len(url),  # 0: Total length of the URL
         url.count('.'),  # 1: Number of dots in the URL
         int('@' in url),  # 2: '@' symbol present
         int(has_ip_address(url)),  # 3: Uses IP address instead of domain
-        int(parsed_url.scheme == 'https'),  # 4: HTTPS used
-        len(parsed_url.netloc),  # 5: Length of domain name
-        len(extracted.subdomain),  # 6: Length of subdomain
-        count_digits(url),  # 7: Count of numeric digits
-        count_special_characters(url),  # 8: Count of special characters
-        int(any(keyword in url.lower() for keyword in suspicious_keywords)),  # 9: Suspicious keywords present
-        get_domain_age(domain),  # 10: Age of domain in days
+        int(any(keyword in url.lower() for keyword in suspicious_keywords)),  # 4: Suspicious keywords present
+        count_special_characters(url),  # 5: Count of special characters
     ]
 
     return features

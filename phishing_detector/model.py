@@ -14,7 +14,7 @@ def predict_url(url: str) -> str:
     """
     # First, let's locate our trusty model that knows how to spot phishing attempts.
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    model_path = os.path.join(base_dir, '..', 'model', 'phishing_model.pkl')
+    model_path = os.path.join(base_dir, 'model', 'phishing_model.pkl')
 
     # Check if the model file is actually there.
     if not os.path.exists(model_path):

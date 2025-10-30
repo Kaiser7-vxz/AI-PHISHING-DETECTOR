@@ -8,6 +8,7 @@ ai_phishing_detector.egg-info/requires.txt
 ai_phishing_detector.egg-info/top_level.txt
 cli_tool/__init__.py
 cli_tool/cli.py
+model/phishing_model.pkl
 phishing_detector/__init__.py
 phishing_detector/features.py
 phishing_detector/model.py

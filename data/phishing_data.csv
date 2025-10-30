@@ -5,16 +5,16 @@ https://secure.dropbox.com.login.verify-user.net,1
 https://example.com,0
 https://github.com,0
 https://www.openai.com,0
-https://login-google.com.secure-authenticate.com, 1),
-http://update-paypal.com-login-security.net, 1),
-http://secure.appleid.apple.verify-login.ru, 1),
-http://dropbox.com.verify.login.security-checker.info, 1),
-http://google.com-account-recovery.info, 1),,
-http://secure.netflix.com-user-update.com, 1),
-http://chaseonline.login-secure-check.com, 1),
-http://amazon-login.account.recovery-form.com, 1),
-http://tinyurl.com/securelogin-check, 1)
-https://www.microsoft.com/en-us/, 0),
-https://www.dropbox.com, 0),
-https://bankofamerica.com, 0),
-https://login.salesforce.com
+https://login-google.com.secure-authenticate.com,1
+http://update-paypal.com-login-security.net,1
+http://secure.appleid.apple.verify-login.ru,1
+http://dropbox.com.verify.login.security-checker.info,1
+http://google.com-account-recovery.info,1
+http://secure.netflix.com-user-update.com,1
+http://chaseonline.login-secure-check.com,1
+http://amazon-login.account.recovery-form.com,1
+http://tinyurl.com/securelogin-check,1
+https://www.microsoft.com/en-us,0
+https://www.dropbox.com,0
+https://bankofamerica.com,0
+https://login.salesforce.com,0
