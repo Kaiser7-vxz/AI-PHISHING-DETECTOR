@@ -18,7 +18,7 @@
 ```Install the Following packages Using```
 # pip install -r requirements.txt
 ```you can install all this at once by using```
-# pip install scikit-learn joblib tldextract pytest click black flakes8 pre-commit
+# pip install scikit-learn joblib tldextract pytest click black flakes8 pre-commit pandas whois 
 ```another package``
 # pip install .
 ```Train the Model```

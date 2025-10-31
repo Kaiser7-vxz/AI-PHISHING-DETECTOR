@@ -8,3 +8,5 @@ click
 black
 flake8
 pre-commit
+whois
+pandas
