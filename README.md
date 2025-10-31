@@ -16,13 +16,24 @@
 
 
 ```Install the Following packages Using```
+
 # pip install -r requirements.txt
 ```you can install all this at once by using```
 # pip install scikit-learn joblib tldextract pytest click black flakes8 pre-commit pandas whois 
 ```another package``
 # pip install .
 ```Train the Model```
-# python train_model.py
+# python -c "from phishing_detector.train_model import train_and_save_model; train_and_save_model()"
+```Verify If model Exists or Not```
+# ls -l model/phishing_model.pkl
+```copy trained model into package folder```
+# cp model/phishing_model.pkl phishing_detector/model/
+```reinstall editable package so installed package contains the model```
+# pip install -e .
+```verify both locations exist or not```
+# ls -l model/phishing_model.pkl
+# ls -l phishing_detector/model/phishing_model.pkl
+
 
 ```After these The Phishing detector is good to go```
 # phishing-detector -h  // It will show the cli interface with help menu
