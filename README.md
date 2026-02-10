@@ -43,7 +43,7 @@
 # phishing-detector https://github.com
   ___________________________
  # / Let me analyze that URL! \
- #  \ Knowledge is power. 🦉    /
+ #  \ Knowledge is power.     /
    ---------------------------
    #      \
    #       \
@@ -54,5 +54,5 @@
 
 # Welcome to the Phishing URL Detector CLI!
 
-```🔍 Analyzing: https://github.com
-🧠 Result: Legitimate
+```Analyzing: https://github.com
+   Result: Legitimate
