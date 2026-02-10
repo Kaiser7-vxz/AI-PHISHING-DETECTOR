@@ -21,8 +21,8 @@ def print_welcome_message():
     print("Welcome to the Phishing URL Detector CLI!\n")
 
 def print_result(result, url):
-    print(f"\n🔍 Analyzing: {url}")
-    print(f"🧠 Result: {result}\n")
+    print(f"\n Analyzing: {url}")
+    print(f" Result: {result}\n")
 
 def main():
     print_welcome_message()
@@ -35,7 +35,7 @@ def main():
         result = predict_url(args.url)
         print_result(result, args.url)
     else:
-        print("⚠️  No URL provided.\n")
+        print(" No URL provided.\n")
         parser.print_help()
 
 if __name__ == "__main__":

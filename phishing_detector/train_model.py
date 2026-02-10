@@ -27,14 +27,14 @@ def train_and_save_model():
     # Define the absolute path to the training CSV data
     csv_path = os.path.join(project_root, 'data', 'phishing_data.csv')
 
-    print("📦 Loading training data...")
+    print(" Loading training data...")
     urls, labels = load_training_data(csv_path)
 
-    print("🔍 Extracting features...")
+    print(" Extracting features...")
     X = [extract_features(url) for url in urls]
     y = labels
 
-    print("🧠 Training model...")
+    print(" Training model...")
     model = RandomForestClassifier(n_estimators=100, random_state=42)
     model.fit(X, y)
 
@@ -43,10 +43,10 @@ def train_and_save_model():
     os.makedirs(model_dir, exist_ok=True)
     model_path = os.path.join(model_dir, 'phishing_model.pkl')
 
-    print(f"💾 Saving model to {model_path}...")
+    print(f" Saving model to {model_path}...")
     joblib.dump(model, model_path)
 
-    print("✅ Model trained and saved!")
+    print(" Model trained and saved!")
 
 if __name__ == "__main__":
     train_and_save_model()
