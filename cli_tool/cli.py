@@ -6,7 +6,7 @@ from phishing_detector.model import predict_url
 PROFESSOR_OWL_ASCII = r"""
   ___________________________
  / Let me analyze that URL! \
- \ Knowledge is power. 🦉    /
+ \ Knowledge is power.       /
   ---------------------------
          \
           \
