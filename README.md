@@ -115,3 +115,60 @@ Result: Legitimate
 2. Flake8 (linting)
 3. Pre-commit hooks
 4. Pytest (testing)
+
+---
+
+## 🐳 Docker Setup (Alternative Method)
+
+### Quick Start with Docker
+
+1. **Build the Docker Image**
+   ```bash
+   docker build -t phishing-detector .
+   ```
+
+2. **Run the Container**
+   ```bash
+   # Check help
+   docker run --rm phishing-detector
+
+   # Analyze a URL
+   docker run --rm phishing-detector "https://example.com"
+
+   # Analyze a suspicious URL
+   docker run --rm phishing-detector "http://secure-bank-login.suspicious-site.com"
+   ```
+
+### Using Docker Compose
+
+1. **Build and Run**
+   ```bash
+   docker-compose up --build
+   ```
+
+2. **Run Commands**
+   ```bash
+   # Interactive mode
+   docker-compose run --rm phishing-detector
+
+   # Direct command
+   docker-compose run --rm phishing-detector "https://github.com"
+   ```
+
+### Docker Image Details
+
+- **Base Image**: Python 3.11 slim
+- **System Dependencies**: whois, curl
+- **Model Training**: Automatically trains the model during build
+- **Security**: Runs as non-root user
+- **Size**: Optimized for minimal footprint
+
+### Docker Build Context
+
+The `.dockerignore` file excludes:
+- Development files (`.git`, `__pycache__`, IDE files)
+- Build artifacts (`build/`, `dist/`, `*.egg-info/`)
+- Test files and cache
+- Temporary files
+
+This ensures faster builds and smaller image sizes.
