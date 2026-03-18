@@ -118,9 +118,9 @@ Result: Legitimate
 
 ---
 
-## 🐳 Docker Setup (Alternative Method)
+## 🐳 Docker Setup 
 
-### Quick Start with Docker
+### Setting Up With Docker
 
 1. **Build the Docker Image**
    ```bash
