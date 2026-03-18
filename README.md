@@ -124,19 +124,26 @@ Result: Legitimate
 
 1. **Build the Docker Image**
    ```bash
+   # Build with cache (faster for subsequent builds)
    docker build -t phishing-detector .
+
+   # Or build without cache (fresh build, recommended for first time)
+   docker build -t phishing-detector . --no-cache
    ```
 
 2. **Run the Container**
    ```bash
-   # Check help
-   docker run --rm phishing-detector
+   # Check help and available options
+   docker run --rm phishing-detector --help
 
    # Analyze a URL
    docker run --rm phishing-detector "https://example.com"
 
    # Analyze a suspicious URL
    docker run --rm phishing-detector "http://secure-bank-login.suspicious-site.com"
+
+   # Test with a known phishing URL
+   docker run --rm phishing-detector "mail.printakid.com/www.online.americanexpress.com/index.html"
    ```
 
 ### Using Docker Compose
@@ -154,6 +161,17 @@ Result: Legitimate
    # Direct command
    docker-compose run --rm phishing-detector "https://github.com"
    ```
+
+### Docker Build Process
+
+The Docker build automatically:
+- Installs system dependencies (whois, curl)
+- Installs Python packages from requirements.txt
+- Trains the machine learning model using your training data
+- Installs the phishing-detector CLI tool
+- Creates a non-root user for security
+
+**Note**: The first build may take several minutes as it downloads dependencies and trains the model.
 
 ### Docker Image Details
 
